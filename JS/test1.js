@@ -1,5 +1,5 @@
-name = "Mike"
-age = 30
+let name = "Mike";
+const AGE = 30;
 
-alert(name)
-console.log(age)
+console.log(name)
+alert(AGE)
