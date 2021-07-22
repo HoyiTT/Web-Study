@@ -22,4 +22,6 @@ function sayHello2(name){
 
 sayHello('Mike');
 sayHello('Minji');
+sayHello2();
+sayHello2('Junseo')
 sayHello();
