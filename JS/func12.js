@@ -13,3 +13,13 @@ let sayHello = function(){
 /*
 함수 표현식 : 코드에 도달하면 생성
 */
+
+function showError() {
+    console.log("error");
+}
+//화샇표 함수
+let showError = () =>{
+    console.log("error");
+}
+
+const add = (num1,num2) => num1 + num2 ;
