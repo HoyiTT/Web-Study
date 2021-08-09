@@ -75,10 +75,48 @@
 
 
 		$(document).ready(function(){
-
+            tabMenu1.start();
 		});
 
+        
+        
+        var tabMenu1 = {
+        $tabMenu:null,
+		$menuItems:null,
+		$selectMenuItem:null;
+            
+        // 요소 초기화
+		init:function(){
+			this.$tabMenu = $("#tabMenu1");
+			this.$menuItems = this.$tabMenu.find("li");
+		}
 
+		// 이벤트 등록
+		initEvent:function(){
+            var objthis = this;
+			this.$menuItems.on("click",function(){
+				objthis.setSelectItem($(this));
+			});
+		},
+
+		// $menuItem에 해당하는 메뉴 아이템 선택하기
+		setSelectItem:function($menuItem){
+			// 기존 선택메뉴 아이템을 비활성화 처리 하기
+			if(this.$selectMenuItem){
+				this.$selectMenuItem.removeClass("select");
+			}
+
+			// 신규 아이템 활성화 처리 하기
+			this.$selectMenuItem = $menuItem;
+			this.$selectMenuItem.addClass("select");
+		}
+        
+            start:function(){
+                this.init();
+                this.initEvent();
+            }
+        }
+        
 
 	</script>
 </head>
