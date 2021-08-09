@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+
+
+    <script>
+        /*
+         예제 03 다음 예제를 실행하면 1,2,3에는 어떤 값이 출력될까요?
+         */
+        var data=10;
+        function outer(){
+
+            // 중첩함수
+            function inner(){
+
+                this.data=20;
+                data=30;
+
+                document.write("1. data1 = "+data,"<br>");
+                document.write("2. this.data = "+this.data,"<br>");
+                document.write("3. window.data = "+window.data,"<br>");
+
+            }
+
+            inner();
+        }
+
+        outer();
+        /*
+         실행결과
+         1. data = 30
+         2. this.data = 30
+         3. window.data = 30
+         */
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

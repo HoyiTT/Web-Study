@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+
+
+	<script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"></script>
+	<script>
+		/*
+		예제04: 사용자 이름, 아이디, 별명, 나이, 주소를 매개변수 값으로 받아 출력하는 함수를 만들어 주세요.
+
+		 풀이2: 리터럴 사용 후
+		 */
+		var userInfo = {
+			userName:"김춘경",
+			id:"ddandongne",
+			age: 20,
+			address:"서울시 금천구",
+			nickName:"딴동네"
+		}
+
+		// 함수 호출
+		showInfo(userInfo);
+
+		// 함수에서 데이터 사용
+		function showInfo(userInfo){
+			document.write("name = "+userInfo.userName, "id = "+userInfo.id, ", nickName = "+userInfo.nickName, ", age = "+userInfo.age, ", address = "+userInfo.address);
+		}
+
+
+	</script>
+</head>
+
+	<body>
+
+	</body>
+
+</html>

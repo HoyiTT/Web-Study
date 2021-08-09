@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+
+    <script src="../../libs/jquery-1.11.0.min.js"></script>
+
+    <script>
+        /*
+         예제 04 다음 예제를 실행하면 1,2,3에는 어떤 값이 출력될까요
+         */
+        var data=10;
+        $(document).ready(function(){
+
+            // 이벤트 리스너 등록
+            $("#myButton").click(function(){
+                this.data=20;
+                data=30;
+
+                console.log("1. data1 = "+data);
+                console.log("2. this.data = "+this.data);
+                console.log("3. window.data = "+window.data);
+            });
+        });
+        /*
+         실행결과
+         1. data = 30
+         2. this.data = 20
+         3. window.data = 30
+         */
+
+    </script>
+
+</head>
+    
+<body>
+    <button id="myButton">리스너실행</button>
+</body>
+</html>

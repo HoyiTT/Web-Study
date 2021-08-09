@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+
+
+    <script>
+        /*
+         예제 05 다음 예제를 실행하면 1,2,3에는 어떤 값이 출력될까요?
+         */
+        var data=10;
+        // 클래스 정의
+        function MyClass() {
+            // 프로퍼티 정의
+            this.data=0;
+        }
+
+        // 메서드 정의
+        MyClass.prototype.method1=function(){
+
+            this.data=20;
+            data=30;
+
+            console.log("1. data1 = "+data);
+            console.log("2. this.data = "+this.data);
+            console.log("3. window.data = "+window.data);
+        }
+
+        // 인스턴스 생성
+        var my1 = new MyClass();
+        // 메서드 호출
+        my1.method1();
+
+        /*
+         실행결과
+         1. data = 30
+         2. this.data = 20
+         3. window.data = 30
+         */
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+</html>
