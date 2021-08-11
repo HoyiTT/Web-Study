@@ -14,7 +14,24 @@
 
 		 */
 
-
+        var userInfo = {
+            userName:"박준서",
+            id : "HoyiTT",
+            age:30
+            }
+        
+        var defaults = {
+            age:0,
+            address:"서울시 모모구",
+            nickname:"ss"
+        }
+        
+        
+        showInfo(userInfo);
+        function showInfo(userInfo){
+            userInfo= $.extend({},defaults,userInfo)
+            document.write("userName = "+userInfo.userName+ " id = " +userInfo.id+" nickName=" + userInfo.nickName+" age = "+userInfo.age+" address = "+userInfo.address);
+            }
 
 	</script>
 </head>
