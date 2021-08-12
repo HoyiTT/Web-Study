@@ -9,11 +9,17 @@
 		 예제 01: 함수 방식을 활용한 간단한 클래스 만들기
 		 */
 		// 클래스 정의
-
+        function User(){
+            this.name = "HoyiTT";
+            this.age = 10;
+            this.showinfo = function(){
+                document.write("name = "+this.name+", age = "+this.age);
+            }
+        }
 		// 인스턴스 생성
-
+        var user1 = new User();
 		// 메서드 호출
-
+        user1.showinfo();
 
 
 	</script>
