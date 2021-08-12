@@ -75,9 +75,42 @@
 
 
 		$(document).ready(function(){
-
+            var tab1 = new TabMenu();
+            tab1.init();
+            tab1.initEvent();
 		});
+        
+            function TabMenu(){
+                this.$tabMenu =null;
+                this.$menuItems=null;
+                this.$selectMenuItem=null;
 
+                // 요소 초기화
+                this.init=function(){
+                    this.$tabMenu = $("#tabMenu1");
+                    this.$menuItems = $tabMenu.find("li");
+                }
+
+                // 이벤트 등록
+                this.initEvent=function(){
+                    var objThis = this;
+                    this.$menuItems.on("click",function(){
+                        objThis.setSelectItem($(this));
+                    });
+                }
+
+                // $menuItem에 해당하는 메뉴 아이템 선택하기
+                this.setSelectItem=function($menuItem){
+                    // 기존 선택메뉴 아이템을 비활성화 처리 하기
+                    if(this.$selectMenuItem){
+                        this.$selectMenuItem.removeClass("select");
+                    }
+
+                    // 신규 아이템 활성화 처리 하기
+                    this.$selectMenuItem = $menuItem;
+                    this.$selectMenuItem.addClass("select");
+                }
+        }
 
 	</script>
 </head>
