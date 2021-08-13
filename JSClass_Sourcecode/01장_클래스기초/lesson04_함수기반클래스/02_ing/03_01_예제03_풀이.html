@@ -62,18 +62,23 @@
 
 		$(document).ready(function(){
 			// 인스턴스 생성
-			var tabMenu1 = new TabMenu();
+			var tabMenu1 = new TabMenu("#tabMenu1");
 			tabMenu1.init();
 			tabMenu1.initEvent();
+            
+            
+            var tabMenu2 = new TabMenu("#tabMenu2");
+			tabMenu2.init();
+			tabMenu2.initEvent();
 		});
 
-		function TabMenu(){
+		function TabMenu(selector){
 			this.$tabMenu =null;
 			this.$menuItems=null;
 			this.$selectMenuItem=null;
 			// 요소 초기화
 			this.init = function() {
-				this.$tabMenu = $("#tabMenu1");
+				this.$tabMenu = $(selector);
 				this.$menuItems = this.$tabMenu.find("li");
 			}
 
