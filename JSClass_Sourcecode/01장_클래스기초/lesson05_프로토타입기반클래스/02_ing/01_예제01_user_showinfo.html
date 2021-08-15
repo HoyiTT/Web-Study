@@ -9,15 +9,21 @@
 		 예제 01: 프로토타입 방식을 활용한 간단한 클래스 만들기
 		 */
 		// 클래스 생성자
-
+        function User(){
+            this.userName="HoyiTT",
+            this.age=0;
+            
+        }
 
 		// 메서드 정의
-
+        User.prototype.showinfo=function(){
+            document.write("username = "+this.userName+", age = "+this.age);
+        }
 
 		// 인스턴스 생성
-
+        var user1 = new User();
 		// 메서드 호출
-
+        user1.showinfo();
 
 	</script>
 </head>
