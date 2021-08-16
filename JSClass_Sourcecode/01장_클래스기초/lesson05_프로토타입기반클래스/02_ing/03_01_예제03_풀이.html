@@ -67,7 +67,12 @@
 			// 인스턴스 생성
 			var tabMenu1 = new TabMenu();
 			//요소 초기화 및 이벤트 등록 호출하기
-			tabMenu1.init();
+			tabMenu1.init("#tabMenu1");
+			tabMenu1.initEvent();
+            
+            var tabMenu2 = new TabMenu();
+			//요소 초기화 및 이벤트 등록 호출하기
+			tabMenu1.init("#tabMenu2");
 			tabMenu1.initEvent();
 		});
 
@@ -76,6 +81,7 @@
 			this.$menuItems = null;
 			this.$selectMenuItem = null;
 		}
+        
 
 		// 요소 초기화
 		TabMenu.prototype.init=function(selelctor){
