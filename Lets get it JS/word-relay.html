@@ -14,6 +14,12 @@
         const number = prompt('몇 명이 참가하나요?');
         const realNumber = Number(number);
         console.log(typeof realNumber);
+        
+        const onClickButton = () => {
+            console.log('버튼 클릭');
+        }
+        const $button = document.querySelector('button');
+        $button.addEventListener('click', onClickButton);
     </script>
 </body>
 </html>
