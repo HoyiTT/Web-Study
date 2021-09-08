@@ -14,13 +14,20 @@
         const number = Number(prompt('몇 명이 참가하나요?'));
         const $button = document.querySelector('button');
         const $input = document.querySelector('input');
+        let word;
+        let newWord;
         
         const onClickButton = () => {
-            
+            if (!word){ // 제시어가 비어 있는가?
+                word = newWord;
+                $word.textContent = word;
+            } else {//비어 있지 않다
+                
+            }
         };
         
         const onInput = () => {
-            
+            newWord = event.target.value;
         };
         
         $button.addEventListener('click', onClickButton);
