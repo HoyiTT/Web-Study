@@ -11,15 +11,16 @@
     <input type = "Text">
     <button>입력</button>
     <script>
+        // 태그를 저장하는 변수명은 $로 시작
         const number = Number(prompt('몇 명이 참가하나요?'));
         const $button = document.querySelector('button');
         const $input = document.querySelector('input');
         const $word = document.querySelector('#word');
         const $order = document.querySelector('#order');
-                
+
         let word; // 제시어
         let newWord; // 현재 단어
-        
+
         const onClickButton = () => {
             if (!word){ // 제시어가 비어 있는가?
                 word = newWord; // 입력한 단어가 제시어가 된다.
@@ -49,7 +50,6 @@
                     alert('올바르지 않은 단어입니다!');
                     $input.value = '';
                     $input.focus();
-                    
                 }
                 
             }
