@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <div id="root"></div>
-    </body>
-    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script type="text/babel">
-        const root = document.getElementById("root");
-        function Title() {
-            return (
-            <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>Hello I'm a title
-            </h3>
-        );
-        }
-    
-        const Button = () => ( 
-            <button 
-            style={{
-                    backgroundColor:"tomato",
-            }} 
-            onClick={() => console.log("im clicked")}
-        >
-            Click me bye
-            </button>
-        );
-        
-        const Container = ()  => ( 
-            <div>
-                <Title /> 
-                <Button />
-            </div>
-            );
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const root = document.getElementById("root");
+    let counter = 0;
 
-        ReactDOM.render(<Container />, root);
-    </script>
+    function countUP() {
+      counter += 1;
+      render();
+    }
+    function render() {
+      ReactDOM.render(<Container />, root);
+    }
+
+    const Container = () => (
+      <div>
+        <h3>Total Click : {counter}</h3>
+        <button onClick={countUP}>Click me</button>
+      </div>
+    );
+
+    render();
+  </script>
 </html>
