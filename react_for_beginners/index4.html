@@ -7,23 +7,26 @@
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
-    function Btn() {
+    function Btn({text, big}) {
       return <button style={{
         backgroundColor: "tomato",
         color: "white",
         padding: "10px 20px",
         border: 0,
         borderRadius:10,
-      }}>Save Change</button>;
+        fontSize: big ? 18: 16,
+      }}>{text}
+      </button>;
     }
+
+
 
 
     function App() {
       return (
         <div>
-          <Btn />
-          <Btn />
-          <Btn />
+          <Btn text="Save Changes" big={true}/>
+          <Btn text="Continue" big={false}/>
         </div>
       );
     }
