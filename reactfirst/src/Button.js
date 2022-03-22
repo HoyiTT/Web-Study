@@ -10,7 +10,7 @@ function Button ({text}){
 }
 
 Button.propTypes = {
-    text: PropTypes.string.isRequeird,
+    text: PropTypes.string.isRequired,
 }
 
 export default Button;
