@@ -1,39 +1,26 @@
 import { useState, useEffect } from "react";
 
+function Hello() {
+  function byFn() {
+    console.log("bye :(");
+  }
+  function hiFn() {
+    console.log("created :)")
+    return byFn;
+  }
+  // 파괴될때에도 알고싶은경우 리턴값에 결과를 출력하는 함수를 넣어준다.
+  useEffect(hiFn, []);
+  return <h1>Hello</h1>
+}
+
+
 function App() {
-  const [counter, setValue] = useState(0);
-  const [keyword, setKeyword] = useState("");
-  const onClick = () => setValue((prev) => prev + 1);
-  const onChange= (event) => setKeyword(event.target.value);
-
-  useEffect(() => {
-    console.log("i run only once");
-  }, []);
-// useEffect는 한 번만 실행되기를 원할떄 사용함
-useEffect(() => {
-  console.log("i run when 'keyword' changes");
-}, [keyword]);
-
-useEffect(() => {
-  console.log("i run when 'counter' changes");
-}, [counter]);
-
-useEffect(() => {
-  console.log("i run when keyword & counter changes");
-}, [keyword, counter]);
-  //2번째 인자로 배열에 원하는 키워드(변수)를 넣어주면 해당 변수가 변화 할 때에만 실행하게끔 해줌
-
-
+  const [showing, setShowing] = useState(false);
+  const onClick = () => setShowing((prev) => !prev);
   return (
     <div>
-      <input 
-        value={keyword}
-        onChange={onChange} 
-        type="text" 
-        placeholder="Search here..."
-      />
-      <h1>{counter}</h1>
-      <button onClick={onClick}>click me</button>
+      {showing ? <Hello /> : null}
+      <button onClick={onClick}>{showing ? "Hide" : "Show"}</button>
     </div>
   );
 }
